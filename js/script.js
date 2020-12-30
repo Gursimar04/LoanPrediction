@@ -15,7 +15,7 @@ function onBtnClick(){
         return
     }
 
-    if (dependant === ""|| parseInt(dependant)<=0) {
+    if (dependant === ""|| parseInt(dependant)<0) {
         $('#approval').text("Invalid Value for dependent")
         return
     }
