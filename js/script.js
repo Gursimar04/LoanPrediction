@@ -1,6 +1,6 @@
 function startServer(){
-    // $.get("https://loan-prediction-gursimar.herokuapp.com/", function (data) {
-    // });
+    $.get("https://loan-prediction-gursimar.herokuapp.com/", function (data) {
+    });
 }
 
 function onBtnClick(){
