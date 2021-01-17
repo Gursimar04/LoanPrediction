@@ -17,30 +17,88 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onload="startServer()">
       <div class="container-fluid hero">
         <div class="subhero">
             <h1 data-aos="fade" data-aos-duration="1200" data-aos-delay='550' class="display-4 ConName">Appro-Loan</h1>
             <div data-aos="fade" data-aos-duration="1200" data-aos-delay='650' class="phrase">Loan Applications Simplified</div>
-            <div data-aos="fade" data-aos-duration="1200" data-aos-delay='750' class="infoText">Looking to apply for a home loan! Well look no further, feed values to our machine learning model and find out wether your loan will be imporved or not in an instant. (As of now website is not responsive)</div>
+            <div data-aos="fade" data-aos-duration="1200" data-aos-delay='750' class="infoText">Looking to apply for a home loan! Well look no further, feed values to our machine learning model and find out wether your loan will be imporved or not in an instant.</div>
             <a href="#aboutconclavediv">
             <div data-aos="fade" data-aos-duration="1200" data-aos-delay='900' id='btn' class="mainButton">
-                <span class="registerText"> Get Your Prediction </span>
+                <span class="registerText">Get Your Prediction</span>
                 <span class="registerIcon">
                     <img src="https://img.icons8.com/metro/18/7C9982/long-arrow-down.png" />
                 </span>
             </div>
             </a>
         </div>
-        <img src="./Icons/House searching-bro.png" class="heropic" />
+            <img src="./Icons/House searching-bro.png" class="heropic">
        </div>
 
 
         <div id="aboutconclavediv" class="aboutconclavediv">
             <div data-aos="fade" data-aos-duration="1200" data-aos-delay='400' class="HeadingAbout">
-                <span style="color:#f9f8f6; "> Loan Approval Prediction</span>
+                <span style="color:#f9f8f6; ">Loan Approval Prediction</span>
             </div>
             <div data-aos="fade" class='fullform'>
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input id="names" name='names' autocomplete="off" required>
+                    <label for='names' class='dependants-name'>
+                        <span class="content-dependants">Name</span>
+                    </label>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='500' class="form">
+                    <select id="gender" name='gender' onchange='changegender()'>
+                        <option value="invalid"></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Prefer">Prefer Not to Say</option>
+                    </select>
+                    <label for='gender' class='dependants-name'>
+                        <span class="content-dependants">Gender</span>
+                    </label>
+                </div>
+                </div>
+
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='500' class="form">
+                    <select id="employ" name='employ' onchange='changeemploy()'>
+                        <option value="invalid"></option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <label for='employ' class='dependants-name'>
+                        <span class="content-dependants">Self Employed</span>
+                    </label>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' id="income" name='income' autocomplete="off" required>
+                    <label for='income' class='dependants-name'>
+                        <span class="content-dependants">Income</span>
+                    </label>
+                </div>
+                </div>
+
+                <div data-aos="fade" class='formrow'>
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' id="coapplicantincome" name='coapplicantincome' autocomplete="off" required>
+                    <label for='coapplicantincome' class='dependants-name'>
+                        <span class="content-dependants">Co-Applicant Income</span>
+                    </label>
+                </div>
+
+                <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
+                    <input type='number' id="amount" name='amount' autocomplete="off" required>
+                    <label for='amount' class='dependants-name'>
+                        <span class="content-dependants">Amount</span>
+                    </label>
+                </div>
+                </div>
+
+                <div data-aos="fade" class='formrow'>
                 <div data-aos="fade" data-aos-duration="1200" data-aos-delay='500' class="form">
                     <select id="credit-history" name='credit-history' onchange='changecred()'>
                         <option value="invalid"></option>
@@ -58,7 +116,9 @@
                         <span class="content-dependants">Dependants</span>
                     </label>
                 </div>
+                </div>
 
+                <div data-aos="fade" class='formrow'>
                 <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
                     <select id="Education" name='Education' onchange='changeed()'>
                         <option value="invalid"></option>
@@ -76,7 +136,9 @@
                         <span class="content-dependants">Term (in months)</span>
                     </label>
                 </div>
+                </div>
 
+                <div data-aos="fade" class='formrow'>
                 <div data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="form">
                     <select id="Married" name='Married' onchange='changemarr()'>
                         <option value="invalid"></option>
@@ -98,6 +160,7 @@
                     <label for='Property' class='dependants-name'>
                         <span class="content-dependants">Property Area</span>
                     </label>
+                </div>
                 </div>
                 <button data-aos="fade" data-aos-duration="1200" data-aos-delay='600' class="btn" onclick="onBtnClick()"> Calculate</button>
             </div>
